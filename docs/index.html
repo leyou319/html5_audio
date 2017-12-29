@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+	<title>html5之分享版音乐播放器</title>
+	<link rel="stylesheet" href="css/audio.css">
+</head>
+<body>
+	<div class="page_wrapper">
+		<div class="song_wrap">
+			<div class="song_poster">
+				<img src="images/poster.jpg" alt="">
+			</div>
+			<div class="song_content">
+				<p class="name">小幸运</p>
+				<p class="singer">田馥甄</p>
+			</div>
+			<div class="song_handle loading">
+				<i></i>
+			</div>
+		</div>
+		<div class="lyric_content">
+			<div class="lyric" id="lyric">
+				lyric loading...
+			</div>
+		</div>
+		<div class="progressbar">
+			<span class="start_time">00:00</span>
+			<div class="progress">
+				<p class="current"><span class="btn_handle"></span></p>
+			</div>
+			<span class="end_time">00:00</span>
+		</div>
+	</div>
+	<audio src="music/xiao_xing_yun.mp3" id="audio"></audio>
+	<script src="js/audio.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.page_wrapper{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+}
+
+.song_wrap{
+	position: relative;
+	padding: 15px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	background-color: rgba(0,0,0,.1);	
+}
+
+.song_poster{
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+}
+.song_poster img{
+	display: block;
+	width: 80px;
+}
+
+.song_content{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+	padding: 15px 0 0 15px;
+	color: #fff;
+}
+.song_content .name{
+	font-size: 18px;	
+}
+.song_content .singer{
+	font-size: 14px;	
+}
+
+.song_handle{
+	position: relative;
+	width: 42px;
+	height: 42px;
+	margin: 18px 0;
+	border: 1px solid #fff;
+	border-radius: 50%;
+}
+.song_handle i{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.song_handle.play i{	
+	width: 8px;
+	height: 8px;
+	border: 2px solid #fff;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+}
+.song_handle.pause i{
+	border: 6px solid transparent;
+	border-left: 12px solid #fff;
+	margin-left: 4px;
+}
+.song_handle.loading i{
+	width: 20px;
+	height: 20px;
+	background: url(../images/loading.gif) no-repeat center;
+}
+
+.progressbar{
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.progressbar .start_time, .progressbar .end_time{
+	width: 55px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+}
+.progressbar .progress{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+	position: relative;	
+}
+.progressbar .progress:before{
+	z-index: 1;
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 19px;
+	width: 100%;
+	height: 2px;
+	background-color: rgba(255,255,255,.5);
+}
+.progressbar .progress .current{
+	z-index: 2;
+	position: absolute;
+	top: 19px;
+	left: 0;
+	height: 2px;
+	background-color: #f60;
+}
+.progressbar .progress .btn_handle{
+	z-index: 3;
+	position: absolute;
+	top: 50%;
+	right: -25px;
+	width: 40px;
+	height: 40px;
+	transform: translateY(-50%);	
+}
+.progressbar .progress .btn_handle:before{
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 50%;
+	background-color: #f60;
+}
+
+.lyric_content{
+	position: absolute;
+	top: 110px;
+	bottom: 70px;
+	width: 100%;
+	overflow: hidden;
+}
+.lyric{
+	position: relative;
+	top: 50%;
+	padding: 0 10px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	transition: transform .3s;
+}
+.lyric p{
+	line-height: 42px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+}
+.lyric p.current{
+	color: #f60;
+}
