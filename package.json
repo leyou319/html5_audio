@@ -1,0 +1,15 @@
+{
+  "name": "audio",
+  "version": "1.0.0",
+  "description": "html5之分享版音乐播放器",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "http-server"
+  },
+  "author": "leyou",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}
