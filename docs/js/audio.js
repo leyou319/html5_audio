@@ -9,6 +9,12 @@
 		},
 		bindEvent: function(){
 			var self = this, endTime;
+
+			this.el.addEventListener('progress', function(){
+				$('.song_handle').classList.remove('play');
+				$('.song_handle').classList.add('loading');
+			});
+
 			this.el.addEventListener('canplay', function(){
 				endTime = this.duration;
 				$('.end_time').textContent = self.formatTime(endTime);
@@ -42,9 +48,9 @@
 			});
 
 			// 处理audio不能自动播放问题
-			/*document.addEventListener('DOMContentLoaded', function(){
+			document.addEventListener('DOMContentLoaded', function(){
 				self.el.play();
-			});*/
+			});
 
 			document.addEventListener('WeixinJSBridgeReady', function(){
 				self.el.play();
