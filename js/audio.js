@@ -42,9 +42,9 @@
 			});
 
 			// 处理audio不能自动播放问题
-			document.addEventListener('DOMContentLoaded', function(){
+			/*document.addEventListener('DOMContentLoaded', function(){
 				self.el.play();
-			});
+			});*/
 
 			document.addEventListener('WeixinJSBridgeReady', function(){
 				self.el.play();
