@@ -10,11 +10,6 @@
 		bindEvent: function(){
 			var self = this, endTime;
 
-			this.el.addEventListener('loadstart', function(){
-				$('.song_handle').classList.remove('play');
-				$('.song_handle').classList.add('loading');
-			});
-
 			this.el.addEventListener('canplay', function(){
 				endTime = this.duration;
 				$('.end_time').textContent = self.formatTime(endTime);
