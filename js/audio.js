@@ -10,7 +10,7 @@
 		bindEvent: function(){
 			var self = this, endTime;
 
-			this.el.addEventListener('progress', function(){
+			this.el.addEventListener('loadstart', function(){
 				$('.song_handle').classList.remove('play');
 				$('.song_handle').classList.add('loading');
 			});
