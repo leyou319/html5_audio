@@ -70,6 +70,9 @@
 	border-left: 12px solid #fff;
 	margin-left: 4px;
 }
+.song_handle.loading{
+	pointer-events: none;
+}
 .song_handle.loading i{
 	width: 20px;
 	height: 20px;
