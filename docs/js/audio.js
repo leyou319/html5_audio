@@ -8,20 +8,22 @@
 			this.getLyric(this.el.src.replace('.mp3', '.lrc'));
 		},
 		bindEvent: function(){
-			var self = this, endTime;
+			var self = this,
+				$handle = $('.song_handle'),
+				endTime;
 
 			this.el.load();
-			this.el.addEventListener('progress', function(){
+			this.el.addEventListener('loadstart', function(){
 				$('.song_handle').classList.add('loading');
-				console.log('音频正在加载。。。');
+				console.log('音频开始加载。。。');
 			});
 
 			this.el.addEventListener('canplay', function(){
 				console.log('音频已经可以播放。。。');
 				endTime = this.duration;
 				$('.end_time').textContent = self.formatTime(endTime);
-				$('.song_handle').classList.remove('loading');
-				$('.song_handle').classList.add('play');
+				$handle.classList.remove('loading');
+				$handle.classList.add('play');
 				this.play();				
 				self.handleProgress(endTime); // 可以播放的时候才能操作进度条
 			});
@@ -36,7 +38,7 @@
 				this.play();
 			});
 
-			$('.song_handle').addEventListener('click', function(){
+			$handle.addEventListener('click', function(){
 				var flag = this.classList.contains('play');
 				if (flag) {
 					this.classList.remove('play');
@@ -50,9 +52,14 @@
 			});
 
 			// 处理audio不能自动播放问题
-			/*document.addEventListener('DOMContentLoaded', function(){
+			window.addEventListener('load', function(){
 				self.el.play();
-			});*/
+				if (self.el.paused) {
+					alert(self.el.paused);
+					$handle.classList.remove('play');
+					$handle.classList.add('pause');
+				}
+			});
 
 			document.addEventListener('WeixinJSBridgeReady', function(){
 				self.el.play();
