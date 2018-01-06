@@ -15,11 +15,9 @@
 			this.el.load();
 			this.el.addEventListener('loadstart', function(){
 				$('.song_handle').classList.add('loading');
-				console.log('音频开始加载。。。');
 			});
 
 			this.el.addEventListener('canplay', function(){
-				console.log('音频已经可以播放。。。');
 				endTime = this.duration;
 				$('.end_time').textContent = self.formatTime(endTime);
 				$handle.classList.remove('loading');
@@ -55,7 +53,6 @@
 			window.addEventListener('load', function(){
 				self.el.play();
 				if (self.el.paused) {
-					alert(self.el.paused);
 					$handle.classList.remove('play');
 					$handle.classList.add('pause');
 				}
