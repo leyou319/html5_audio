@@ -41,7 +41,7 @@ parseLyric: function(text){
     return result;
 }
 ```
-### 解析歌词
+### 同步歌词
 ```
 var lyric = []; //歌词结果数组
 this.audio.addEventListener('timeupdate', function(){
